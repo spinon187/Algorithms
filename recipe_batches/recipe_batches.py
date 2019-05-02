@@ -3,7 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = -1
+  for k in recipe:
+    if k in ingredients.keys():
+      x = ingredients[k] // recipe[k]
+      if batches != -1:
+        if x < batches:
+          batches = x
+      else:
+          batches = x
+    else:
+      batches = 0
+  return batches
 
 
 if __name__ == '__main__':
